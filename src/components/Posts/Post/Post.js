@@ -29,10 +29,10 @@ const Post = ({ post }) => {
           <p className='tags'>{post.tags.map((tag) => `#${tag} `)}</p>
         </div>
         <div className='card-actions'>
-          <button onClick={() => handleLike()} className='like'>
+          <button onClick={() => handleLike()} className='like post-button'>
             <FaHeart /> LIKE {post.likeCount}
           </button>
-          <button className='delete' onClick={() => handleDelete()}>
+          <button className='delete post-button' onClick={() => handleDelete()}>
             <FaTrash />
             DELETE
           </button>

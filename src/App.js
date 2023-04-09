@@ -3,6 +3,7 @@ import { getPosts } from './actions/posts';
 import './App.css';
 import Posts from '../src/components/Posts/Posts';
 import Form from '../src/components/Form/Form';
+import Map from '../src/components/Map/Map';
 import { useDispatch } from 'react-redux';
 
 const App = () => {
@@ -23,6 +24,9 @@ const App = () => {
           <div className='grid-item-posts'>
             <Posts />
           </div>
+        </div>
+        <div className='grid-item-map'>
+          <Map />
         </div>
       </div>
     </div>

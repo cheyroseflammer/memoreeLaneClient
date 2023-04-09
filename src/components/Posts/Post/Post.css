@@ -74,7 +74,7 @@ h5.title {
   display: flex;
   justify-content: space-around;
 }
-button {
+button.post-button {
   display: flex;
   align-items: center;
   justify-content: space-around;

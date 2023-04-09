@@ -1,0 +1,17 @@
+.location-marker > svg {
+  color: #a70600f3;
+  height: 30px;
+  width: 30px;
+}
+
+div.map {
+  margin: 40px 0;
+  overflow: hidden;
+  border-radius: 30px;
+  border: solid rgba(2, 2, 2, 0.411) 4px;
+  box-shadow: rgb(26, 26, 26) 0 6px 22px, rgba(99, 99, 99, 0.4) 0 0 12px 1px;
+}
+
+div.map > div > div > div {
+  background-color: black !important;
+}
