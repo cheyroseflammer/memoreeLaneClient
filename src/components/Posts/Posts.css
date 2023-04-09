@@ -1,0 +1,14 @@
+.grid {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 260px));
+  justify-content: center;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: rgb(26, 26, 26) 0 6px 22px, rgba(99, 99, 99, 0.4) 0 0 12px 1px;
+}
