@@ -280,7 +280,6 @@ const Map = ({ center, zoom }) => {
     const lng = parseFloat(ev.longitude);
     return <LocationMarker key={index} lat={lat} lng={lng} />;
   });
-  console.log(markers);
   return (
     <div className='map' style={{ height: '60vh', width: '90vw' }}>
       <GoogleMapReact

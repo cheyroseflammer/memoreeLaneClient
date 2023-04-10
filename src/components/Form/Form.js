@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './Form.css';
 import FileBase from 'react-file-base64';
-import { useDispatch } from 'react-redux';
-import { createPost } from '../../actions/posts';
+import { useDispatch, useSelector } from 'react-redux';
+import { createPost, updatePost } from '../../actions/posts';
 
-const Form = () => {
+const Form = ({ currentId, setCurrentId }) => {
   const [postData, setPostData] = useState({
     title: '',
     creator: '',
@@ -14,6 +14,12 @@ const Form = () => {
     latitude: '',
     longitude: '',
   });
+  const post = useSelector((state) =>
+    currentId ? state.posts.find((p) => p.post_id === currentId) : null
+  );
+  useEffect(() => {
+    if (post) setPostData(post);
+  }, [post]);
   const dispatch = useDispatch();
   const getLoc = () => {};
   useEffect(() => {
@@ -30,7 +36,11 @@ const Form = () => {
   }, []);
   const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch(createPost(postData));
+    if (currentId) {
+      dispatch(updatePost(currentId, postData));
+    } else {
+      dispatch(createPost(postData));
+    }
   };
   return (
     <div className='form-container'>

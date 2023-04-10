@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { getPosts } from './actions/posts';
 import './App.css';
 import Posts from '../src/components/Posts/Posts';
@@ -7,10 +7,11 @@ import Map from '../src/components/Map/Map';
 import { useDispatch } from 'react-redux';
 
 const App = () => {
+  const [currentId, setCurrentId] = useState(0);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getPosts());
-  }, [dispatch]);
+  }, [currentId, dispatch]);
   return (
     <div className='app-container'>
       <div className='app-bar'>
@@ -19,10 +20,10 @@ const App = () => {
       <div className='grow'>
         <div className='grid-container'>
           <div className='grid-item-form'>
-            <Form />
+            <Form currentId={currentId} setCurrentId={setCurrentId} />
           </div>
           <div className='grid-item-posts'>
-            <Posts />
+            <Posts setCurrentId={setCurrentId} />
           </div>
         </div>
         <div className='grid-item-map'>

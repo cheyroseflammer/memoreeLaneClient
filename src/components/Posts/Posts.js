@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import Loader from '../Loader/Loader';
 import './Posts.css';
 
-const Posts = () => {
+const Posts = ({ setCurrentId }) => {
   const posts = useSelector((state) => state.posts);
   return !posts.length ? (
     <Loader />
@@ -12,7 +12,7 @@ const Posts = () => {
     <div className='grid'>
       {posts.map((post) => (
         <div className='grid-item' key={post.post_id}>
-          <Post post={post} />
+          <Post post={post} setCurrentId={setCurrentId} />
         </div>
       ))}
     </div>

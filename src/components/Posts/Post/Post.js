@@ -4,18 +4,17 @@ import moment from 'moment';
 import { FaTrash, FaHeart } from 'react-icons/fa';
 import { BsThreeDotsVertical } from 'react-icons/bs';
 
-const Post = ({ post }) => {
+const Post = ({ post, setCurrentId }) => {
   const handleLike = () => {};
   const handleDelete = () => {
     console.log('hello');
   };
-  const handleClick = () => {};
   return (
     <div className='card'>
       <div className='card-content'>
         <div className='card-img'>
           <img src={post.selectedFile} alt={post.title} className='post-img' />
-          <p className='dots' onClick={handleClick()}>
+          <p className='dots' onClick={() => setCurrentId(post.post_id)}>
             <BsThreeDotsVertical />
           </p>
         </div>
