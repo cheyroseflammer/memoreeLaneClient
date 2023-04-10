@@ -1,6 +1,6 @@
 # Memoree Lane Application 📍🗺️
 
-Memoree Lane like your everyday social media app but with a twist! This app is built for vanlifers or travel addicts. When a post is made, your current location is then logged on the map as a "pin point". The purpose is to visualize the places on a map you've been.
+Memoree Lane is like your everyday social media app but with a twist! This app is built for vanlifers and travel addicts. When a post is made, your current location is then logged on the map as a "pin point". The purpose is to visualize the places on a map you've been.
 
 **Think something like this but at your finger tips virtually!**
 ![map-example](public/assets/image.jpg)
@@ -19,7 +19,7 @@ Clone repo: `git clone https://github.com/cheyroseflammer/memoreeLaneClient.git`
 
 Install dependencies: `npm install`
 
-Run Unit Tests: `npm test`
+Run unit tests: `npm test`
 
 Start client: `npm start`
 
@@ -35,7 +35,7 @@ Start client: `npm start`
 - Delete a post - High Priority 🔴
 - Edit a post - High Priority 🔴
 - Like a post - Medium Priority 🟠
-- Comment on a - Medium Priority 🟠
+- Comment on a post - Medium Priority 🟠
 - Sign Up - Medium Priority 🟠
 - Login - Medium Priority 🟠
 - Sign Out - Medium Priority 🟠
@@ -44,7 +44,7 @@ Start client: `npm start`
 
 ---
 
-**Fetching data using Redux Action** ⬇️:
+**Fetching data using Redux Actions** ⬇️:
 
 ```
 export const getPosts = () => async (dispatch) => {
