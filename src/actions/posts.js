@@ -18,12 +18,11 @@ export const createPost = (post) => async (dispatch) => {
   }
 };
 
-export const updatePost = (post_id, postData) => async (dispatch) => {
+export const updatePost = (post_id, post) => async (dispatch) => {
   try {
-    const { data } = await api.updatePost(post_id, postData);
-    dispatch({ type: 'PUT', payload: data });
-    console.log({ data });
+    const { data } = await api.updatePost(post_id, post);
+    dispatch({ type: 'UPDATE', payload: data });
   } catch (error) {
-    console.log(error);
+    console.log(error.message);
   }
 };

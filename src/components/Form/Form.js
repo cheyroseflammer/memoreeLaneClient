@@ -14,14 +14,26 @@ const Form = ({ currentId, setCurrentId }) => {
     latitude: '',
     longitude: '',
   });
+
   const post = useSelector((state) =>
     currentId ? state.posts.find((p) => p.post_id === currentId) : null
   );
+  const dispatch = useDispatch();
+
   useEffect(() => {
     if (post) setPostData(post);
   }, [post]);
-  const dispatch = useDispatch();
-  const getLoc = () => {};
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (currentId) {
+      dispatch(updatePost(currentId, postData));
+      // GRABBING PROPERLY HERE!
+      console.log(postData, 'handle submit');
+    } else {
+      dispatch(createPost(postData));
+    }
+  };
   useEffect(() => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
@@ -33,15 +45,7 @@ const Form = ({ currentId, setCurrentId }) => {
         });
       });
     }
-  }, []);
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (currentId) {
-      dispatch(updatePost(currentId, postData));
-    } else {
-      dispatch(createPost(postData));
-    }
-  };
+  }, [postData]);
   return (
     <div className='form-container'>
       <form onSubmit={handleSubmit}>
@@ -88,7 +92,7 @@ const Form = ({ currentId, setCurrentId }) => {
         <button className='form button-submit' type='submit'>
           SUBMIT
         </button>
-        <button className='form button-clear' type='button' onClick={getLoc}>
+        <button className='form button-clear' type='button'>
           CLEAR
         </button>
       </form>
