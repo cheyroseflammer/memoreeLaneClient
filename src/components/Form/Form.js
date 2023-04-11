@@ -28,8 +28,6 @@ const Form = ({ currentId, setCurrentId }) => {
     e.preventDefault();
     if (currentId) {
       dispatch(updatePost(currentId, postData));
-      // GRABBING PROPERLY HERE!
-      console.log(postData, 'handle submit');
     } else {
       dispatch(createPost(postData));
     }
@@ -45,7 +43,7 @@ const Form = ({ currentId, setCurrentId }) => {
         });
       });
     }
-  }, [postData]);
+  }, []);
   return (
     <div className='form-container'>
       <form onSubmit={handleSubmit}>

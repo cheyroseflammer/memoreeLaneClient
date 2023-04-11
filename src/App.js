@@ -7,7 +7,7 @@ import Map from '../src/components/Map/Map';
 import { useDispatch } from 'react-redux';
 
 const App = () => {
-  const [currentId, setCurrentId] = useState(0);
+  const [currentId, setCurrentId] = useState(null);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getPosts());
