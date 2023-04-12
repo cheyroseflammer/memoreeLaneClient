@@ -24,12 +24,27 @@ const Form = ({ currentId, setCurrentId }) => {
     if (post) setPostData(post);
   }, [post]);
 
+  const clear = () => {
+    setCurrentId(0);
+    setPostData({
+      title: '',
+      creator: '',
+      message: '',
+      tags: '',
+      selectedFile: '',
+      latitude: '',
+      longitude: '',
+    });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (currentId) {
       dispatch(updatePost(currentId, postData));
+      clear();
     } else {
       dispatch(createPost(postData));
+      clear();
     }
   };
   useEffect(() => {
@@ -90,7 +105,7 @@ const Form = ({ currentId, setCurrentId }) => {
         <button className='form button-submit' type='submit'>
           SUBMIT
         </button>
-        <button className='form button-clear' type='button'>
+        <button className='form button-clear' type='button' onClick={clear}>
           CLEAR
         </button>
       </form>
