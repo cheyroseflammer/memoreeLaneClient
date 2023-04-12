@@ -31,14 +31,16 @@ Start client: `npm start`
 - See my post location pin on map - High Priority 🔴
 - Edit a post - High Priority 🔴
 - Delete a post - High Priority 🔴
+- Like a post - Medium Priority 🟠
 
 🟨 In Progress
 
-- Like a post - Medium Priority 🟠 ⚒️
-- Comment on a post - Medium Priority 🟠
-- Sign Up - Medium Priority 🟠
-- Login - Medium Priority 🟠
-- Sign Out - Medium Priority 🟠
+- Sign Up + Google 0Auth Authentication - Medium Priority 🟠
+- Login with Email JWT - Medium Priority 🟠
+- Sign Out - Medium Priority 🟡
+- Comment on a post - Low Priority 🟡
+- Post Pagination - Low Priority 🟡
+- Post Search Functionality - Low Priority 🟡
 
 ## Data Fetching 🌐
 

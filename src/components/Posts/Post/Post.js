@@ -8,13 +8,6 @@ import { useDispatch } from 'react-redux';
 
 const Post = ({ post, setCurrentId }) => {
   const dispatch = useDispatch();
-
-  const handleClick = (e) => {
-    e.preventDefault();
-    dispatch(likePost(post));
-    window.location.reload();
-  };
-
   return (
     <div className='card'>
       <div className='card-content'>
@@ -34,7 +27,7 @@ const Post = ({ post, setCurrentId }) => {
           <p className='tags'>{post.tags.map((tag) => `#${tag} `)}</p>
         </div>
         <div className='card-actions'>
-          <button onClick={handleClick} className='like post-button'>
+          <button onClick={() => dispatch(likePost(post))} className='like post-button'>
             <FaHeart /> LIKE {post.likeCount}
           </button>
           <button className='delete post-button' onClick={() => dispatch(deletePost(post.post_id))}>
