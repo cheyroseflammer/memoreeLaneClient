@@ -30,11 +30,11 @@ Start client: `npm start`
 - Add a new post - High Priority 🔴
 - See my post location pin on map - High Priority 🔴
 - Edit a post - High Priority 🔴
+- Delete a post - High Priority 🔴
 
 🟨 In Progress
 
-- Delete a post - High Priority 🔴
-- Like a post - Medium Priority 🟠
+- Like a post - Medium Priority 🟠 ⚒️
 - Comment on a post - Medium Priority 🟠
 - Sign Up - Medium Priority 🟠
 - Login - Medium Priority 🟠
