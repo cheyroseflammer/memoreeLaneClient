@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import GoogleMapReact from 'google-map-react';
 import LocationMarker from './LocationMarker';
+import PostInfo from './PostInfo';
 import { useSelector } from 'react-redux';
 
-const getMapOptions = (map) => {
+const getMapOptions = () => {
   return {
     mapTypeControl: true,
     streetViewControl: true,
@@ -273,12 +274,31 @@ const getMapOptions = (map) => {
   };
 };
 const api_key = process.env.REACT_APP_API_KEY;
-const Map = ({ center, zoom }) => {
+const Map = () => {
+  const [postInfo, setPostInfo] = useState(null);
   const posts = useSelector((state) => state.posts);
-  const markers = posts.map((ev, index) => {
-    const lat = parseFloat(ev.latitude);
-    const lng = parseFloat(ev.longitude);
-    return <LocationMarker key={index} lat={lat} lng={lng} />;
+  const markers = posts.map((post, index) => {
+    const lat = parseFloat(post.latitude);
+    const lng = parseFloat(post.longitude);
+    if ((lat, lng)) {
+      return (
+        <LocationMarker
+          key={index}
+          lat={lat}
+          lng={lng}
+          onClick={() =>
+            setPostInfo({
+              post_id: post.post_id,
+              creator: post.creator,
+              title: post.title,
+              message: post.message,
+            })
+          }
+        />
+      );
+    } else {
+      return;
+    }
   });
   return (
     <div className='map' style={{ height: '60vh', width: '90vw' }}>
@@ -290,13 +310,14 @@ const Map = ({ center, zoom }) => {
       >
         {markers}
       </GoogleMapReact>
+      {postInfo && <PostInfo info={postInfo} />}
     </div>
   );
 };
 const defaultProps = {
   center: {
-    lat: 45.3265,
-    lng: -122.8756,
+    lat: 34.0522,
+    lng: -118.2437,
   },
   zoom: 10,
 };

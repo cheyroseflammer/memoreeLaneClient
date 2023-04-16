@@ -3,6 +3,9 @@
   height: 30px;
   width: 30px;
 }
+.location-marker > svg:hover {
+  cursor: pointer;
+}
 
 div.map {
   margin: 40px 0;
@@ -10,8 +13,16 @@ div.map {
   border-radius: 30px;
   border: solid rgba(2, 2, 2, 0.411) 4px;
   box-shadow: rgb(26, 26, 26) 0 6px 22px, rgba(99, 99, 99, 0.4) 0 0 12px 1px;
+  position: relative;
 }
 
 div.map > div > div > div {
   background-color: black !important;
+}
+
+.post-info {
+  position: absolute;
+  width: 200px;
+  height: 100%;
+  bottom: 0;
 }
