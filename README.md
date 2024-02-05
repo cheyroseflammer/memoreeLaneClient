@@ -19,8 +19,6 @@ Clone repo: `git clone https://github.com/cheyroseflammer/memoreeLaneClient.git`
 
 Install dependencies: `npm install`
 
-Run unit tests: `npm test`
-
 Start client: `npm start`
 
 ## User Stories 👤
